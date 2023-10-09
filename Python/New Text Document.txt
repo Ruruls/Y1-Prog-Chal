@@ -1,1 +1,24 @@
-test
+answer1 = str(input("Is your character male?")) 
+if answer1 == "yes":
+    answer2 = str(input("Is your character known for their intellect?"))
+else:
+    print("Your character is skyler")
+if answer2 == "yes":
+    answer3 = str(input("Is your character associated with science"))
+else: 
+    huell = str(input("Is your character Huell"))
+if answer3 == "yes":
+    
+if huell == "yes":
+    print("Good huell")
+else:
+    answer4 = str(input("Does your character know a lot about minerals?"))
+if answer4 == "yes":
+    print("Your character is Hank")
+else:
+    answer5 = str(input("Is your character old"))
+if answer5 == "yes":
+    print("Your character is mike")
+else:
+    print("Your character is jesse")
+
