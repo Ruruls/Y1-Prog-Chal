@@ -1,6 +1,7 @@
 
-houses = ['LONDON','Terraced', 3, 735000] , ['CARDIFF', 'Semi-Detached', 2, 100000], ['LEEDS','Terraced', 3,245000],['LONDON','Semi-Detatched' ,1, 240000]
+houses = [['LONDON','Terraced', 3, 735000] , ['CARDIFF', 'Semi-Detached', 2, 100000], ['LEEDS','Terraced', 3,245000],['LONDON','Semi-Detatched' ,1, 240000]]
 sales = []
+
 ourregions = ['LONDON', 'LEEDS', 'CARDIFF', 'BRISTOL']    
 property_types =  ['TERRACED', 'SEMI-DETATCHED','DETATCHED']
 # Prints list of the houses that are stored in the houses variable 
@@ -36,9 +37,20 @@ def region_search():
         if r_check == False:
             print("Entered region is not valid")
 
+def add_house():
+    newhome= []
+    Region = input("What is the region of the home?")
+    House_Type = input("What is the House type?")
+    Bedrooms = input("What is the Bedrooms amount")
+    Cost = input("What is the cost")
+    newhome.append(Region)
+    newhome.append(House_Type)
+    newhome.append(Bedrooms)
+    newhome.append(Cost)
+    houses.append(newhome)
 
 
-def show_sales():
+def show_sales():    
     if len(sales) > 0:    
         print("Forename , Surname ,Property cost , Total")
         for i in sales:
@@ -66,14 +78,6 @@ def house_sale():
         sub_total = houses[select-1][3]
         print(sub_total)
         total_fees = 0
-    if sub_total > 100000:
-        total_fees += 3000+(sub_total-100000) * 0.2
-        sale.append(customer_forename)
-        sale.append(customer_surname)
-        sale.append(sub_total)
-        sale.append(total_fees)
-        sales.append(sale)
-    else:
         total_fees += sub_total *0.3
         final_total = sub_total+total_fees
         sale.append(customer_forename)
@@ -103,4 +107,10 @@ while True:
     if menuselection ==3:
         house_sale()
     if menuselection==4:
+        add_house()
+    if menuselection==5:
         show_sales()
+    if menuselection==6:
+        break
+    else:
+        print(" This is not a valid input")
